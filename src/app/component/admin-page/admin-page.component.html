@@ -1,0 +1,29 @@
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid bg-light">
+  <div class="row">
+    <div class="container-fluid bg-white align-content-center border-right col-lg-3 col-xs-12">
+      <h5 class="center-text"> An Overview on all Locations ({{locations.length}})</h5>
+      <ul class="list-group" *ngFor="let location of locations;let i = index">
+        <li (click)="selectItem(i)" class="list-group-item align-middle text-center">
+          <a class="no-text-decoration" href="/admin">
+            <span class="d-inline align-middle font-weight-bold text-dark">{{location}}</span>
+          </a>
+          <button type="button" class="float-right btn btn-danger" (click)="removeItem(i)">Delete</button>
+        </li>
+      </ul>
+    </div>
+    <div class="container-fluid col-lg-9 col-xs-12">
+        <div class="rounded maps-view">
+          <iframe
+            width="100%"
+            height="100%"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCcir8SHxu1gjzvf1f8PaohPPsai48QqTg&q={{selectedItem}}" allowfullscreen>
+          </iframe>
+        </div>
+        <input type="text" [(ngModel)]="newItem">
+        <button class="btn btn-success" (click)="addNewItem()">Add new Location</button>
+        <ngb-alert class="alert-warning" *ngIf="showWarning">{{warningText}}</ngb-alert>
+    </div>
+  </div>
+</div>
