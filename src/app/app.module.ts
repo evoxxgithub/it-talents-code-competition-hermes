@@ -9,13 +9,15 @@ import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppPageComponent } from './component/app-page/app-page.component';
 import { AdminPageComponent } from './component/admin-page/admin-page.component';
+import { TransportPageComponent } from './component/transport-page/transport-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     AppPageComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    TransportPageComponent
   ],
   imports: [
     BrowserModule,

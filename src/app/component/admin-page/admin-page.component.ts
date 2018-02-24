@@ -6,37 +6,57 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-page.component.scss']
 })
 export class AdminPageComponent implements OnInit {
-  public locations: string[] = [
+  private _locations: string[] = [
     'München',
     'Köln',
     'Hamburg',
   ];
-  public newItem = '';
-  public showWarning = false;
-  public warningText = 'You entered an invalid Location name';
-  public selectedItem = this.locations[2];
+  private _newItem = '';
+  private _showWarning = false;
+  private _warningText = 'You entered an invalid Location name';
+  private _selectedItem = this._locations[2];
 
   constructor() { }
 
+
+  get locations(): string[] {
+    return this._locations;
+  }
+
+  get newItem(): string {
+    return this._newItem;
+  }
+
+  get showWarning(): boolean {
+    return this._showWarning;
+  }
+
+  get warningText(): string {
+    return this._warningText;
+  }
+
+  get selectedItem(): string {
+    return this._selectedItem;
+  }
+
   ngOnInit() {
   }
-  removeItem(index: number): void {
-    this.locations.splice(index, 1);
+  public removeItem(index: number): void {
+    this._locations.splice(index, 1);
   }
-  addNewItem(): void {
-    if ( this.newItem === '') {
-      this.showWarning = true;
+  public addNewItem(): void {
+    if ( this._newItem === '') {
+      this._showWarning = true;
       setTimeout(() => {
-        this.showWarning = false;
+        this._showWarning = false;
       }, 1600);
     } else {
-      this.locations.push(this.newItem);
-      this.newItem = '';
+      this._locations.push(this._newItem);
+      this._newItem = '';
     }
 
   }
-  selectItem(index: number): void {
-    this.selectedItem = this.locations[index];
+  public selectItem(index: number): void {
+    this._selectedItem = this._locations[index];
   }
-
 }
