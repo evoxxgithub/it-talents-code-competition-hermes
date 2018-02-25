@@ -10,11 +10,21 @@ export class AdminPageComponent implements OnInit {
     'München',
     'Köln',
     'Hamburg',
+    'Essen',
+    'Dortmund',
+    'Kleve',
+    'Osnabrück',
+    'Bremen',
+    'Saarbrücken',
+    'Berlin',
+    'Aachen',
+    'Stuttgart',
+    'Bonn'
   ];
   private _newItem = '';
   private _showWarning = false;
   private _warningText = 'You entered an invalid Location name';
-  private _selectedItem = this._locations[2];
+  private _selectedItem: string;
 
   constructor() { }
 
@@ -40,7 +50,9 @@ export class AdminPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._selectedItem = this.locations[0];
   }
+
   public removeItem(index: number): void {
     this._locations.splice(index, 1);
   }

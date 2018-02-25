@@ -12,3 +12,27 @@
   border: #d4d4d4 2px solid;
   border-radius: 3px;
 }
+
+#sidebar {
+  overflow-y: scroll;
+  height:100%;
+  position: fixed;
+}
+::-webkit-scrollbar {
+  width: 0.6em;
+  height: 4em;
+}
+::-webkit-scrollbar-button {
+  background: #ddd;
+}
+::-webkit-scrollbar-track-piece {
+  background: #ddd;
+}
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}

@@ -1,3 +1,12 @@
-<p>
-  transport-page works!
-</p>
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h3> Request your package transportation here:</h3>
+    <div class="form-group">
+      <input type="text" class="rounded" ngModel="start" placeholder="Start">
+      <input type="text" class="rounded" ngModel="destination" placeholder="Ziel">
+    </div>
+    <button (click)="addPackageToService()" class="btn btn-success">Request</button>
+    <div *ngIf="displaySuccessInfo" class="alert-info">Your Package has been added to the Service!</div>
+  </div>
+</div>
